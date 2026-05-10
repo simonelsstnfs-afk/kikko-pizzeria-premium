@@ -90,7 +90,7 @@ export function Hero() {
                     transition={{ delay: 0.6, duration: 1 }}
                     className="hidden lg:block h-[1px] bg-accent-terracotta/40"
                   />
-                  <span className="font-serif italic font-normal text-cream/90 text-4xl sm:text-[100px] leading-none">
+                  <span className="font-serif italic font-normal text-white text-4xl sm:text-[100px] leading-none drop-shadow-lg">
                     {t.heroAutentico}
                   </span>
                 </div>
@@ -100,7 +100,7 @@ export function Hero() {
               </h1>
             </div>
             
-            <p className="font-sans text-base sm:text-xl text-cream/60 mb-8 sm:mb-12 max-w-lg leading-relaxed font-light tracking-wide lg:border-l-2 lg:border-accent-terracotta/20 lg:pl-6">
+            <p className="font-sans text-base sm:text-xl text-white/90 mb-8 sm:mb-12 max-w-lg leading-relaxed font-normal tracking-wide lg:border-l-2 lg:border-accent-terracotta/40 lg:pl-6 drop-shadow-md">
               {t.heroSub}
             </p>
 
