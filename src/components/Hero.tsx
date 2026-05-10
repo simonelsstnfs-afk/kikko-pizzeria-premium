@@ -27,12 +27,13 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-10 pb-40 sm:py-20">
-        <div className="max-w-4xl">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-10 pb-24 sm:py-20">
+        <div className="max-w-4xl mx-auto lg:mx-0">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             {/* Social Proof Tag - Top Position to avoid scroll overlap */}
             <motion.div
@@ -82,7 +83,7 @@ export function Hero() {
                 <span className="font-serif text-6xl sm:text-[130px] font-bold leading-[0.8] sm:leading-[0.75] text-white tracking-tighter">
                   {t.heroSabor}
                 </span>
-                <div className="flex items-center gap-4 sm:gap-6 ml-2 sm:ml-20">
+                <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 lg:ml-20">
                   <motion.span 
                     initial={{ width: 0 }}
                     animate={{ width: 100 }}
@@ -93,17 +94,17 @@ export function Hero() {
                     {t.heroAutentico}
                   </span>
                 </div>
-                <span className="font-sans text-2xl sm:text-[60px] font-light uppercase tracking-[0.3em] sm:tracking-[0.4em] text-accent-terracotta/80 mt-3 sm:mt-6 ml-2 sm:ml-12">
+                <span className="font-sans text-2xl sm:text-[60px] font-light uppercase tracking-[0.3em] sm:tracking-[0.4em] text-accent-terracotta/80 mt-3 sm:mt-6 lg:ml-12">
                   {t.heroPuerta}
                 </span>
               </h1>
             </div>
             
-            <p className="font-sans text-base sm:text-xl text-cream/60 mb-8 sm:mb-12 max-w-lg leading-relaxed font-light tracking-wide border-l-2 border-accent-terracotta/20 pl-4 sm:pl-6">
+            <p className="font-sans text-base sm:text-xl text-cream/60 mb-8 sm:mb-12 max-w-lg leading-relaxed font-light tracking-wide lg:border-l-2 lg:border-accent-terracotta/20 lg:pl-6">
               {t.heroSub}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-8">
               <button 
                 onClick={scrollToMenu}
                 className="group relative inline-flex items-center gap-3 bg-accent-terracotta text-white font-bold px-10 py-5 rounded-full overflow-hidden transition-all hover:pr-12 shadow-2xl shadow-accent-terracotta/20"
