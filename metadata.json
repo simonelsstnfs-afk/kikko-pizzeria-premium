@@ -1,0 +1,8 @@
+{
+  "name": "Pizza Delivery Web App",
+  "description": "A modern, immersive mobile-first website for a pizza delivery place with WhatsApp checkout.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
