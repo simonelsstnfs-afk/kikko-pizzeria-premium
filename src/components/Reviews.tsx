@@ -23,7 +23,7 @@ export function Reviews() {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="https://www.google.com/maps/place/KIKKO+-+Restaurante+Pizzeria+Italiano/@28.2391965,-16.8408414,17z/data=!3m1!4b1!4m6!3m5!1s0xc6a8d9cdd59661d:0x10f38d1e56ef0f39!8m2!3d28.2391965!4d-16.8408414!16s%2Fg%2F11tc3nz9qk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-6 py-3 bg-accent-terracotta border border-transparent rounded-full text-sm font-semibold text-white hover:bg-accent-terracotta/90 transition-all shadow-lg shadow-accent-terracotta/20">
+            <a href="https://www.google.com/maps/place/KIKKO+-+Restaurante+Pizzeria+Italiano/@28.2391965,-16.8408414,17z/data=!4b1!4m6!3m5!1s0xc6a8d9cdd59661d:0x10f38d1e56ef0f39!8m2!3d28.2391965!4d-16.8408414!16s%2Fg%2F11tc3nz9qk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-6 py-3 bg-accent-terracotta border border-transparent rounded-full text-sm font-semibold text-white hover:bg-accent-terracotta/90 transition-all shadow-lg shadow-accent-terracotta/20">
               <MapPin className="w-4 h-4" />
               {t('btnRoute')}
             </a>
