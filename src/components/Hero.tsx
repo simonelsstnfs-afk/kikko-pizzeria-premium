@@ -23,6 +23,8 @@ export function Hero() {
           alt="Gourmet Pizza Close-up" 
           className="w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-10 pb-24 sm:py-20">
