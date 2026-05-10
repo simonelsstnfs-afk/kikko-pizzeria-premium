@@ -1,19 +1,15 @@
 import { motion } from 'motion/react';
-import { ChevronRight, ArrowDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 import { translations } from '../translations';
 
 export function Hero() {
-  const { language, t: tFn } = useLanguage();
+  const { language } = useLanguage();
   const t = translations[language];
 
-  const scrollToMenu = () => {
-    document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="relative min-h-[100svh] flex items-center pt-24 overflow-hidden bg-dark-bg">
-      {/* Background with advanced overlay */}
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-dark-bg">
+      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <motion.img 
           initial={{ scale: 1.1, opacity: 0 }}
@@ -27,112 +23,75 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/90 via-transparent to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-10 pb-24 sm:py-20">
-        <div className="max-w-4xl mx-auto lg:mx-0">
+      {/* Content Container */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-20 md:pt-0">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          {/* Main Title Group */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex flex-col items-center md:items-start"
           >
-            {/* Social Proof Tag - Top Position to avoid scroll overlap */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10 mb-6 sm:mb-8"
-            >
-              <div className="flex gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className="relative w-3.5 h-3.5">
-                    {/* Empty Star */}
-                    <svg className="absolute inset-0 w-full h-full fill-white/20" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    {/* Filled Star with partial logic for 4.7 */}
-                    <div 
-                      className="absolute inset-0 overflow-hidden"
-                      style={{ 
-                        width: i <= 4 ? '100%' : i === 5 ? '70%' : '0%' 
-                      }}
-                    >
-                      <svg className="w-3.5 h-3.5 fill-accent-terracotta" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <span className="text-[10px] font-bold tracking-wider text-white/90 uppercase">
-                {tFn('heroOrders')} <span className="text-white/40 mx-2">|</span> {tFn('heroZone')}
+            <div className="flex flex-col items-center md:items-start leading-[0.8] mb-2 md:mb-4">
+              <span className="font-serif text-[clamp(3.5rem,10vw,8rem)] text-white italic drop-shadow-lg">
+                Auténtico
               </span>
-            </motion.div>
-
-            {/* Editorial Header Layout */}
-            <div className="relative mb-6 sm:mb-8">
-              <motion.span 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="block font-sans text-[10px] sm:text-sm font-bold tracking-[0.4em] text-accent-terracotta uppercase mb-3 sm:mb-4"
-              >
-                Premium Delivery Experience
-              </motion.span>
-              
-              <h1 className="flex flex-col gap-2 sm:gap-4">
-                <span className="font-serif text-6xl sm:text-[130px] font-bold leading-[0.8] sm:leading-[0.75] text-white tracking-tighter">
-                  {t.heroSabor}
-                </span>
-                <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 lg:ml-20">
-                  <motion.span 
-                    initial={{ width: 0 }}
-                    animate={{ width: 100 }}
-                    transition={{ delay: 0.6, duration: 1 }}
-                    className="hidden lg:block h-[1px] bg-accent-terracotta/40"
-                  />
-                  <span className="font-serif italic font-normal text-white text-4xl sm:text-[100px] leading-none drop-shadow-lg">
-                    {t.heroAutentico}
-                  </span>
-                </div>
-                <span className="font-sans text-2xl sm:text-[60px] font-bold uppercase tracking-[0.3em] sm:tracking-[0.4em] text-accent-terracotta mt-3 sm:mt-6 lg:ml-12 drop-shadow-sm">
-                  {t.heroPuerta}
-                </span>
-              </h1>
+              <span className="font-sans text-[clamp(1rem,3vw,1.5rem)] tracking-[0.6em] text-accent-terracotta uppercase font-black mt-2 md:mt-4 ml-2 drop-shadow-md">
+                Sabor Italiano
+              </span>
             </div>
-            
-            <p className="font-sans text-base sm:text-xl text-white/90 mb-8 sm:mb-12 max-w-lg leading-relaxed font-normal tracking-wide lg:border-l-2 lg:border-accent-terracotta/40 lg:pl-6 drop-shadow-md">
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="max-w-xl flex flex-col items-center md:items-start mt-4 md:mt-0"
+          >
+            <p className="text-white text-lg md:text-xl font-normal leading-relaxed tracking-wide opacity-90 drop-shadow-md text-center md:text-left px-4 md:px-0">
               {t.heroSub}
             </p>
-
-            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-8">
-              <button 
-                onClick={scrollToMenu}
-                className="group relative inline-flex items-center gap-3 bg-accent-terracotta text-white font-bold px-10 py-5 rounded-full overflow-hidden transition-all hover:pr-12 shadow-2xl shadow-accent-terracotta/20"
+            
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-10 w-full sm:w-auto items-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full sm:w-auto px-10 py-5 bg-accent-terracotta text-white font-bold tracking-widest uppercase text-xs rounded-full shadow-[0_10px_30px_rgba(196,65,48,0.3)] hover:shadow-[0_15px_40px_rgba(196,65,48,0.4)] transition-all"
               >
-                <span className="relative z-10">{t.heroBtn}</span>
-                <ChevronRight className="w-5 h-5 relative z-10 transition-transform group-hover:translate-x-1" />
-                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                {t.heroCta}
+              </motion.button>
+              
+              <button className="flex items-center gap-3 text-white/60 hover:text-white transition-colors group">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase border-b border-white/20 pb-1 group-hover:border-white transition-all">
+                  {translations[language].orderNow}
+                </span>
               </button>
             </div>
           </motion.div>
         </div>
       </div>
 
+      {/* Vertical Side Text (Desktop) */}
+      <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-12">
+        <div className="h-24 w-px bg-white/10" />
+        <span className="rotate-90 font-sans text-[10px] tracking-[0.8em] text-white/20 uppercase whitespace-nowrap font-bold">
+          EST. 2024 • PUERTO DE SANTIAGO
+        </span>
+        <div className="h-24 w-px bg-white/10" />
+      </div>
+
       {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer group"
-        onClick={scrollToMenu}
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pb-4 md:pb-0"
       >
-        <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-cream/30 group-hover:text-cream/60 transition-colors">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <ArrowDown className="w-4 h-4 text-accent-terracotta" />
-        </motion.div>
+        <span className="font-sans text-[8px] md:text-[10px] tracking-[0.4em] text-white/40 uppercase font-bold">
+          {t.heroScroll}
+        </span>
+        <ChevronDown className="w-4 h-4 md:w-5 md:h-5 text-accent-terracotta/60" />
       </motion.div>
     </section>
   );
