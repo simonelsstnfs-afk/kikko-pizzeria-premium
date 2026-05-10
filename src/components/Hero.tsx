@@ -94,7 +94,7 @@ export function Hero() {
                     {t.heroAutentico}
                   </span>
                 </div>
-                <span className="font-sans text-2xl sm:text-[60px] font-light uppercase tracking-[0.3em] sm:tracking-[0.4em] text-accent-terracotta/80 mt-3 sm:mt-6 lg:ml-12">
+                <span className="font-sans text-2xl sm:text-[60px] font-medium sm:font-light uppercase tracking-[0.3em] sm:tracking-[0.4em] text-accent-terracotta sm:text-accent-terracotta/80 mt-3 sm:mt-6 lg:ml-12">
                   {t.heroPuerta}
                 </span>
               </h1>
