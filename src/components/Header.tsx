@@ -24,7 +24,7 @@ export function Header({ cartCount, onOpenCart }: HeaderProps) {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="fixed top-0 w-full z-50 glass-panel border-b border-white/5">
+    <header className="fixed top-0 w-full z-50 bg-dark-bg/95 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Left Column: Menu Icon */}
         <div className="flex-1 flex justify-start">
